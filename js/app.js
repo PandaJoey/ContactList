@@ -9,27 +9,27 @@ app.config(function ($routeProvider, $locationProvider) {
     $locationProvider.hashPrefix('');
     $routeProvider
         .when('/', {
-            templateUrl: '/NetNativesProject/views/contactTemplate.html',
+            templateUrl: '/views/contactTemplate.html',
             controller: 'mainController'
         })
         .when('/Home', {
-            templateUrl: '/NetNativesProject/views/contactTemplate.html',
+            templateUrl: 'views/contactTemplate.html',
             controller: 'mainController'
         })
         .when('/Add User', {
-            templateUrl: '/NetNativesProject/views/addContact.html',
+            templateUrl: '/views/addContact.html',
             controller: 'addContactController'
         })
         .when('/Edit User/:id', {
-            templateUrl: '/NetNativesProject/views/editContact.html',
+            templateUrl: '/views/editContact.html',
             controller: 'editContactController'
         })
         .when('/Login', {
-            templateUrl: '/NetNativesProject/views/login.html',
+            templateUrl: '/views/login.html',
             controller: 'loginController'
         })
         .when('/Create Account', {
-            templateUrl: '/NetNativesProject/views/createAccount.html',
+            templateUrl: '/views/createAccount.html',
             controller: 'createAccountController'
         })
         .otherwise({redirectTo: '/'});
