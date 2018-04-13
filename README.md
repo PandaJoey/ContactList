@@ -33,6 +33,8 @@ $http.get function to work but could not get it to return anything other than a 
 I can see the benefits to using angularJS as it has really good unit testing capabilities, it also keeps code clean
 like normal java but almost making everything a class and separate, e.g. the views, directives, services and controllers.
 
+It took me a little while to understand how routes work, but once I did i actually quite liked how it worked.
+
 I used bootstrap so I could quickly create a nice dynamic page that works nicely for what I wanted in minimal time.
 
 I wanted to make a better looking contact list than all the examples I found, if I had more time it would have been cool
