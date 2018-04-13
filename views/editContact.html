@@ -1,0 +1,33 @@
+<!--Shows up when the edit contact button is clicked int he nav and is used to edit a contacts information.
+    various ng-models are implemented here using angularjs injection-->
+<div>
+	<!--shows the message that is being passed in via angular to the user-->
+	<div ng-if="message" class="alert alert-success">{{message}}</div>
+	<form>
+		<div class="form-group">
+			<label for="nameInput">Name</label>
+			<input type="text" class="form-control" id="nameInput" aria-describedby="nameHelp" placeholder="Enter name"
+			       ng-model="contact.name">
+		</div>
+		<div class="form-group">
+			<label for="emailInput">Email address</label>
+			<input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp"
+			       placeholder="Enter email" ng-model="contact.email">
+			<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+		</div>
+		<div class="form-group">
+			<label for="locationInput">Location</label>
+			<input type="text" class="form-control" id="locationInput" aria-describedby="emailHelp"
+			       placeholder="Enter location" ng-model="contact.location">
+		</div>
+		<div class="form-group">
+			<label for="primaryInput">Primary</label>
+			<input type="text" class="form-control" id="primaryInput" aria-describedby="emailHelp"
+			       placeholder="Enter phone number" ng-model="contact.primary">
+		</div>
+		<!--When button is clicked information from the inputs is taken and sent to the updatecontact function-->
+		<button type="submit" class="btn btn-primary" ng-click="updateContact()">Submit</button>
+	</form>
+
+</div>
+

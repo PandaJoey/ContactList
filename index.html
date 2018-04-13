@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact List</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css"
+	      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+	<link rel="stylesheet" href="css/styles.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.js"></script>
+
+</head>
+
+<body ng-app="ContactsApp">
+<nav class="navbar navbar-inverse navbar-fixed-top" ng-controller="navController">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo"
+			        aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a href="index.html" class="navbar-brand"><span class="userIconMain"><i class="fas fa-user"></i></span>
+				CONTACTS</a>
+		</div>
+		<div class="collapse navbar-collapse" id="bs-nav-demo">
+			<ul class="nav navbar-nav">
+				<!--Used to create all the links that are used for the routes.-->
+				<li ng-repeat="navLink in nav.navMenus" ng-class="{active : $index === nav.selectedIndex}">
+					<a class="text-center" ng-click="nav.navClicked($index)" ng-href="#/{{navLink}}">{{navLink}}</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<div class="container">
+
+	<div class="jumbotron">
+		<h1><i class="fas fa-user"></i> Contact List </h1>
+		<p>A place to store your contacts!</p>
+	</div>
+
+	<!--Displays views to the user.-->
+	<ng-view></ng-view>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"
+        integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
+        crossorigin="anonymous"></script>
+<script src="js/app.js"></script>
+<script src="js/controllers/mainController.js"></script>
+<script src="js/services/ContactService.js"></script>
+<script src="js/controllers/addContactController.js"></script>
+<script src="js/controllers/editContactController.js"></script>
+<script src="js/controllers/navController.js"></script>
+
+</body>
+</html>

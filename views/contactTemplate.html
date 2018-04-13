@@ -1,0 +1,42 @@
+<!--View used to create and show the contact cards in the index.html file. injects data from the controller
+    to show contact information to the user-->
+
+<!--shows the message that is being passed in via angular to the user-->
+<div ng-if="message" class="alert alert-success">{{message}}</div>
+
+<!--ng-reapeat loops through the contact array and creates a this html for each user.-->
+<div ng-repeat="contact in contacts.contacts">
+
+	<div class="col-lg-4 col-sm-6">
+		<div class="contactCard">
+			<div class="removeContact">
+				<!--deletes a contact when the user clicks on the trashcan, deletes the contact via its id
+				in the contacts array.-->
+				<a href="" ng-click="deleteContact(contact.id)"><i class="far fa-trash-alt"></i></a>
+			</div>
+			<div class="editContact">
+				<!--takes the user to the edit users page and displays the data of the user that matches the id
+				in the array, then allowing the data to be updated.-->
+				<a ng-href="#/Edit User/{{contact.id}}" target="_self"><i class="far fa-edit"></i></a>
+			</div>
+			<div class="picture">
+				<i class="fas fa-user"></i>
+				<!--was using this to see id's-->
+				<!--<p>ID: {{contact.id}}</p> -->
+			</div>
+			<div class="name">
+				<p>Name: {{contact.name}}</p>
+			</div>
+			<div class="email">
+				<p>Email: {{contact.email}}</p>
+			</div>
+			<div class="location">
+				<p>Location: {{contact.location}}</p>
+			</div>
+			<div class="number">
+				<p>Primary: {{contact.primary}}</p>
+			</div>
+
+		</div>
+	</div>
+</div>
