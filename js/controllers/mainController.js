@@ -13,7 +13,6 @@ app.controller('mainController', ['$scope', 'ContactService', '$timeout', '$loca
     /* Used to delete a contact based on the contacts id pulls the data from
        the service where the contact data is stored and updates the array when completed.*/
     $scope.deleteContact = function (id) {
-        console.log(id);
         $scope.message = ContactService.deleteContact(id);
         $timeout(function () {
             $scope.message = ContactService.blankMessage();
@@ -24,7 +23,6 @@ app.controller('mainController', ['$scope', 'ContactService', '$timeout', '$loca
     * had to use this because i wanted to use the html button to take us
     * there instead of a nav menu*/
     $scope.editUser = function (id) {
-        console.log(id);
         let url = '/Edit User/' + id;
         $location.path(url);
     }
